@@ -19,12 +19,6 @@ spec:
             backend:
               serviceName: "backend"
               servicePort: 8080
-#delete the service of the frontend and make it again
-#kubectl expose deployment frontend --type ClusterIP
-#add the repo for igress
-#1. helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-#install
-#2. helm install nginx-ingress ingress-nginx/ingress-nginx
-#create yaml file
-#vi ingress.yaml
+#helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+#helm install nginx-ingress ingress-nginx/ingress-nginx
 #kubectl apply -f ingress.yaml
