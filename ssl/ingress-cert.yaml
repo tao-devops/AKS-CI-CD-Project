@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-front-back
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  tls:
+    - hosts:
+        - squid-game-team.lh1al.xyz
+      secretName: ssl-cert-staging
+  rules:
+    - host: squid-game-team.lh1al.xyz
+      http:
+        paths:
+          - path: /?(.*)
+            backend:
+              serviceName: "frontend"
+              servicePort: 80
+          - path: /api/quiz/select?(.*)
+            backend:
+              serviceName: "backend"
+              servicePort: 8080
