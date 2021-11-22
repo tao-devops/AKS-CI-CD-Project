@@ -65,11 +65,11 @@ find . -name "frontend-deployment.yaml"
  exit 2
  else
 
- kubectl apply   -f $(find . -name "frontend-deployment.yaml")
+#kubectl apply   -f $(find . -name "frontend-deployment.yaml")
 fi
-curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-chmod 700 get_helm.sh
-./get_helm.sh
+#curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+#chmod 700 get_helm.sh
+#./get_helm.sh
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 if [ $? -eq 0 ]
 then
