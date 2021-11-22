@@ -48,3 +48,19 @@ Get credentials to manage lh1al.xyz domain and configure domain and Kubernetes t
 
 9.Add TLS certificate to your site, so it can be used not only via HTTP, but also via HTTPS. In order to do that, you should have a look at 
 Let’s Encrypt (free certificate issuer) and automated way to use it – cert-manager. Note that you need to complete previous point (custom domain) before doing this one.
+
+10.Take a look into the mid-term project and recall how to deploy it to AKS
+   Create a Terraform configuration to create all required resources
+  Create a script (in your preferred language) that will create a new cluster for your application and deploy to AKS in it a single command
+
+11.Create a Terraform configuration to create a custom virtual machine in Azure (of your chosen size and OS)
+   Use Ansible to install Nginx and JRE on the machine
+   Use Ansible to upload delivery files from mid-course project and start the application on the VM
+   Create a script to automate the whole flow
+
+12.Create two clusters in AKS (preferably using code from Task 1) - test and prod
+  Configure your CI to automatically deploy to test cluster
+  Create a manual deployment to prod cluster (edited) 
+
+13.Secure access to the service with Vouch (https://github.com/vouch/vouch-proxy) or other OAuth-proxy
+As an identity provider you can use Azure AD, Google or your own server - e.g. Keycloak (https://www.keycloak.org/)
