@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: taodevops/sdafrontend:3
+          image: taodevops/new_frontend
           imagePullPolicy: Always
           ports:
             - containerPort: 80
