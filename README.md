@@ -64,3 +64,12 @@ Let’s Encrypt (free certificate issuer) and automated way to use it – cert-m
 
 13.Secure access to the service with Vouch (https://github.com/vouch/vouch-proxy) or other OAuth-proxy
 As an identity provider you can use Azure AD, Google or your own server - e.g. Keycloak (https://www.keycloak.org/)
+
+14.Deploy a Jenkins server for automated deployments
+  Install Jenkins (https://www.jenkins.io/) 
+  Create a Jenkinsfile to build the Quiz app and automatically deploy it to an environment (in practice that's usually "test" or "staging", but in our case it's just one  environment)
+  Move the Jenkins server to a separate virtual network and configure network peering between your app network and Jenkins network
+  Deploy at least two Jenkins Agents
+ Configure a job for manual deployment to an environment (in practice that usually "production")
+  Configure Jenkins to use Azure AD for authentication
+  Do all the above in automated way with a tool of your choice (Ansible / Terraform / Python / Kubernetes ...)
