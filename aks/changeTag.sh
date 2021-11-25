@@ -1,1 +1,2 @@
- sed "s/tagVersion/$1/g" backend-deployment.yaml  
+#!/bin/bash
+sed -i "s/tagVersion/$(more ver)/g"  backend-deployment.yaml
