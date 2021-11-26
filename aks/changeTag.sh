@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -i "s/tagVersion/$(more ver)/g"  backend-deployment.yaml
+sed "s/tagVersion/$(more ver)/g" backend-deployment.yaml > node-app-pod.yml
